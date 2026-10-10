@@ -1,0 +1,40 @@
+{
+  "format_version": 1,
+  "created_utc": "2026-10-10T04:30:59.201533+00:00",
+  "work_root": "E:\\CodexTests\\lerobot-rope-4835-20261010",
+  "formal_completed_runs": 18,
+  "checkpoint_counts": {
+    "full": 18,
+    "smoke": 2,
+    "pilot": 2
+  },
+  "checkpoint_total": 22,
+  "checkpoint_layout": "results/{full,smoke,pilot}/fold_<fold>_seed_<seed>_<variant>/best.pt",
+  "checksums_path": "E:\\CodexTests\\lerobot-rope-4835-20261010\\checksums.json",
+  "checksums_sha256": "faed2b32e3294d6abea25138857943a61210b2e8bb4bf1983a53d88ee73b37de",
+  "archives": {
+    "results.zip": {
+      "path": "E:\\CodexTests\\lerobot-rope-4835-20261010\\results.zip",
+      "sha256": "d2d48cb81e4df373dca6809822285c07b0aeffc59ac13fe543ae632c9e889d80",
+      "size_bytes": 561425,
+      "member_count": 104,
+      "payload_member_count": 103,
+      "uncompressed_payload_bytes": 1351993,
+      "crc_verified": true,
+      "member_sha256_verified": true
+    },
+    "checkpoints.zip": {
+      "path": "E:\\CodexTests\\lerobot-rope-4835-20261010\\checkpoints.zip",
+      "sha256": "9d5da81abe4a125586ec164d522ca9fa1a9bcad4e93a7a205c71ff672ca308a6",
+      "size_bytes": 12549608,
+      "member_count": 23,
+      "payload_member_count": 22,
+      "uncompressed_payload_bytes": 13770614,
+      "crc_verified": true,
+      "member_sha256_verified": true
+    }
+  },
+  "verification": "Both ZIP CRC checks and every payload SHA256/size matched checksums.json. The embedded checksum file bytes matched the external file.",
+  "self_hash_note": "The external archive-manifest.json does not hash itself.",
+  "failure_policy": "No existing file is overwritten. If packaging fails, any newly created partial output is retained for inspection; nothing is deleted or moved."
+}

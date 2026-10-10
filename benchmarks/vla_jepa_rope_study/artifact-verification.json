@@ -1,0 +1,9 @@
+{
+  "archives_verified": 2,
+  "payloads_verified": 125,
+  "formal_checkpoints_verified": 18,
+  "paired_initializations_batches_splits_verified": 9,
+  "finite_checkpoint_tensors": true,
+  "no_archived_code_executed": true,
+  "diagnostic_rows_verified": 2430
+}

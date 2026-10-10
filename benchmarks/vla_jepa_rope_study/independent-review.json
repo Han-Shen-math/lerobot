@@ -1,0 +1,47 @@
+{
+  "scope": "AI-assisted separate automated audit, not independent human review",
+  "frozen_diagnostic_sha256": "86460c29f0d8a5fdf5ea05c900755f19e78a3f0db0ea82be57b28a5a89f221e6",
+  "independent_model_replay": {
+    "formal_checkpoints": 18,
+    "modes_per_checkpoint": 9,
+    "horizon_records": 2430,
+    "diagnostic_functions_imported": false,
+    "max_horizon_feature_mse_difference": 1.6574e-07,
+    "max_horizon_position_mse_difference": 2.2523e-07,
+    "max_aggregate_metric_difference": 4.3083e-08,
+    "max_per_episode_mse_difference": 1.0127e-05,
+    "note": "Equivalent differently arranged arithmetic; numerical comparison, not bitwise equality."
+  },
+  "independent_kernel_audit": {
+    "method": "NumPy Gram matrices compared to explicit pairwise i<j implementation",
+    "physical_horizon_records": 1620,
+    "max_component_discrepancy": 5.5511e-16,
+    "max_coordinate_reconstruction_error": 1.24345e-14,
+    "csv_unique_rows": 2430,
+    "all_fold_weighted_and_seed_aggregates_match": true
+  },
+  "mathematics_review": {
+    "rotation_pairing": true,
+    "feature_error_identity_with_signed_cross_term": true,
+    "position_recurrence_and_kernel": true,
+    "causal_scope_limitations_disclosed": true
+  },
+  "privacy_pattern_scan": {
+    "archives_scanned": 2,
+    "text_members_scanned": 105,
+    "utf8_text_bytes_scanned": 1395297,
+    "categories": [
+      "github_token",
+      "huggingface_token",
+      "openai_token",
+      "private_key_marker",
+      "authorization_header",
+      "credential_url",
+      "quoted_secret_assignment",
+      "personal_home_path",
+      "email_address"
+    ],
+    "pattern_hits": 0,
+    "note": "Bounded UTF-8 pattern scan; not exhaustive secret detection."
+  }
+}

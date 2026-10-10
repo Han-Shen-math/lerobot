@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/huggingface/lerobot.git",
+  "pinned_commit": "b9cb121cb7d4e3e26ec5c906d08dda68d151ba52",
+  "source_path": "src/lerobot/policies/vla_jepa/world_model.py",
+  "source_sha256": "050b6bc0901c59fff8efaa5c3d18a6fe35d8ffe968c91c50624b57763d6f847c",
+  "fixed_source_sha256": "6f710de6ed784787ed61de38900d26fb73cabab3d3d013fb03046061afad6851",
+  "candidate_pr": "https://github.com/huggingface/lerobot/pull/4835",
+  "candidate_head_reference": "7f9f6d1ce42507ebaa6a6f658e59324e9fe35315",
+  "scope": "Only the two rotary frequency expansion lines. Not a full PR test or pretrained-quality evaluation."
+}

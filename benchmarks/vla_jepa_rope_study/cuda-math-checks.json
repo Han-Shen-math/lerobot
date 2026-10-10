@@ -1,0 +1,85 @@
+{
+  "old": {
+    "reference_rotation": {
+      "passed": false,
+      "max_error": 4.456846237182617,
+      "tolerance": 3e-05
+    },
+    "norm_preservation": {
+      "passed": false,
+      "max_error": 0.5756826400756836,
+      "tolerance": 3e-05
+    },
+    "same_position_inner_product": {
+      "passed": false,
+      "max_error": 2.2400436401367188,
+      "tolerance": 3e-05
+    },
+    "relative_position_joint_shift": {
+      "passed": false,
+      "max_error": 10.012990951538086,
+      "tolerance": 0.0001
+    },
+    "single_frequency_dim2": {
+      "passed": false,
+      "error": "RuntimeError: The size of tensor a (2) must match the size of tensor b (10) at non-singleton dimension 3"
+    },
+    "gradient_reference": {
+      "passed": false,
+      "max_error": 3.458499191953055,
+      "tolerance": 1e-10
+    },
+    "attention_forward_backward_finite": {
+      "passed": true,
+      "max_error": 0.0,
+      "tolerance": 3e-05
+    },
+    "future_input_perturbation_preserves_prefix": {
+      "passed": true,
+      "max_error": 0.0,
+      "tolerance": 3e-05
+    }
+  },
+  "new": {
+    "reference_rotation": {
+      "passed": true,
+      "max_error": 0.0,
+      "tolerance": 3e-05
+    },
+    "norm_preservation": {
+      "passed": true,
+      "max_error": 2.384185791015625e-07,
+      "tolerance": 3e-05
+    },
+    "same_position_inner_product": {
+      "passed": true,
+      "max_error": 4.76837158203125e-07,
+      "tolerance": 3e-05
+    },
+    "relative_position_joint_shift": {
+      "passed": true,
+      "max_error": 7.152557373046875e-07,
+      "tolerance": 0.0001
+    },
+    "single_frequency_dim2": {
+      "passed": true,
+      "max_error": 0.0,
+      "tolerance": 3e-05
+    },
+    "gradient_reference": {
+      "passed": true,
+      "max_error": 0.0,
+      "tolerance": 1e-10
+    },
+    "attention_forward_backward_finite": {
+      "passed": true,
+      "max_error": 0.0,
+      "tolerance": 3e-05
+    },
+    "future_input_perturbation_preserves_prefix": {
+      "passed": true,
+      "max_error": 0.0,
+      "tolerance": 3e-05
+    }
+  }
+}

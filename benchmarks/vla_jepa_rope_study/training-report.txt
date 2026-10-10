@@ -1,0 +1,111 @@
+Controlled RoPE old/new experiment
+Mode: full
+Completed runs: 18; paired comparisons: 9
+Negative new-minus-old error differences favor corrected RoPE.
+fold=0 seed=11: one-step delta=-4.2395666e-05; autoregressive delta=0.02415608
+fold=0 seed=22: one-step delta=-0.00068487739; autoregressive delta=-0.0025042608
+fold=0 seed=33: one-step delta=-0.00028283242; autoregressive delta=0.013234999
+fold=1 seed=11: one-step delta=-5.4124044e-05; autoregressive delta=0.011853667
+fold=1 seed=22: one-step delta=-0.00051377038; autoregressive delta=-0.0024978507
+fold=1 seed=33: one-step delta=-0.00017764769; autoregressive delta=0.0042996643
+fold=2 seed=11: one-step delta=-5.3536147e-05; autoregressive delta=0.027801616
+fold=2 seed=22: one-step delta=-0.00050893356; autoregressive delta=0.0058448213
+fold=2 seed=33: one-step delta=-6.8996567e-05; autoregressive delta=0.0099298702
+
+PER-SEED CROSS-FOLD AGGREGATES (trajectory-weighted)
+seed=11: one-step delta=-5.0018619e-05; autoregressive delta=0.021270454
+seed=22: one-step delta=-0.00056919378; autoregressive delta=0.00028090326
+seed=33: one-step delta=-0.00017649222; autoregressive delta=0.0091548447
+Seed mean one-step delta: -0.00026523487; sample std: 0.0002707252391220579
+Primary one-step metric uses 8 frames, matching training. Sixteen-frame teacher-forced/AR metrics include context-length extrapolation.
+
+LIMITATIONS
+Synthetic fixed features, not real video or full VLA.
+No pretrained-checkpoint or robot-performance claim.
+Folds share training data; seeds and trajectory windows are not independent new datasets.
+No significance test or pseudoreplicated confidence interval is reported.
+Training dynamics can compensate for the old formula; improvement is not guaranteed.
+
+INDEPENDENT EXECUTION AUDIT
+Formal runs verified: 18/18; 9 pairs; each 1000 steps, CUDA.
+Full command wall time: 535.478301 seconds; 2026-10-10T12:20:44.0111584+08:00 to 2026-10-10T12:29:39.4926922+08:00.
+Sum of recorded optimization time: 522.624067 seconds.
+PyTorch allocated peak: 97412096 bytes (92.899 MiB).
+PyTorch reserved peak: 106954752 bytes (102.000 MiB).
+Observed device-wide memory peak: 1422.0 MiB; sampled device-wide, includes desktop.
+Source commit: b9cb121cb7d4e3e26ec5c906d08dda68d151ba52
+Original source SHA256: 050b6bc0901c59fff8efaa5c3d18a6fe35d8ffe968c91c50624b57763d6f847c
+Corrected runtime source SHA256: 6f710de6ed784787ed61de38900d26fb73cabab3d3d013fb03046061afad6851
+Experiment SHA256: ccd2e9828f60996d5d26fbcf7fdc10d2b3b5c0760de94b3c0afc8bab00fffbdf
+Runner SHA256: 5da17961fd45dc2930c19111b12744371444913b179a1afadb7403b40053e171
+Environment: {"python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]", "platform": "Windows-11-10.0.26200-SP0", "torch": "2.11.0+cu128", "cuda_runtime": "12.8", "cuda_available": true, "device": "cuda", "cpu_threads": 8, "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU", "gpu_memory_bytes": 8589410304, "compute_capability": [8, 6], "nvidia_smi": "NVIDIA GeForce RTX 3070 Laptop GPU, 572.83, 8192 MiB"}
+No input, dependency, source checkout, or existing PR workspace change detected.
+All 18 CSV curves contain steps 1..1000, finite loss/gradient values, and validation-only checkpoint minima.
+Every pair has identical initialization and batch-order hashes and identical held-out trajectory IDs.
+Trajectory split: 64 train / 16 validation / 40 test per fold; 3 disjoint test folds cover all 120 trajectories.
+Optimization: AdamW lr=0.0003, weight_decay=0.0001, batch_size=16; deterministic FP32/math SDPA; 8 training context frames.
+Smoke and pilot each contain 2 short runs and are excluded from the formal 18-run count.
+
+CUDA MATHEMATICS
+old reference_rotation: {"passed": false, "max_error": 4.456846237182617, "tolerance": 3e-05}
+old norm_preservation: {"passed": false, "max_error": 0.5756826400756836, "tolerance": 3e-05}
+old same_position_inner_product: {"passed": false, "max_error": 2.2400436401367188, "tolerance": 3e-05}
+old relative_position_joint_shift: {"passed": false, "max_error": 10.012990951538086, "tolerance": 0.0001}
+old single_frequency_dim2: {"passed": false, "error": "RuntimeError: The size of tensor a (2) must match the size of tensor b (10) at non-singleton dimension 3"}
+old gradient_reference: {"passed": false, "max_error": 3.458499191953055, "tolerance": 1e-10}
+old attention_forward_backward_finite: {"passed": true, "max_error": 0.0, "tolerance": 3e-05}
+old future_input_perturbation_preserves_prefix: {"passed": true, "max_error": 0.0, "tolerance": 3e-05}
+new reference_rotation: {"passed": true, "max_error": 0.0, "tolerance": 3e-05}
+new norm_preservation: {"passed": true, "max_error": 2.384185791015625e-07, "tolerance": 3e-05}
+new same_position_inner_product: {"passed": true, "max_error": 4.76837158203125e-07, "tolerance": 3e-05}
+new relative_position_joint_shift: {"passed": true, "max_error": 7.152557373046875e-07, "tolerance": 0.0001}
+new single_frequency_dim2: {"passed": true, "max_error": 0.0, "tolerance": 3e-05}
+new gradient_reference: {"passed": true, "max_error": 0.0, "tolerance": 1e-10}
+new attention_forward_backward_finite: {"passed": true, "max_error": 0.0, "tolerance": 3e-05}
+new future_input_perturbation_preserves_prefix: {"passed": true, "max_error": 0.0, "tolerance": 3e-05}
+
+Mathematical reference: adjacent pair j rotates by p*10000^(-2*j/D). Corrected pair matrices satisfy R^T R=I and R(p)^T R(q)=R(q-p). Old block repetition uses unequal angles within pairs and is generally non-orthogonal.
+Input gradients compared with independent closed-form reference; not a finite-difference gradcheck or a position-gradient check.
+Temporal cyclic shift by 3 frames, not a random shuffle.
+MSE over the 4x16 fixed position-derived feature tokens; not physical position MSE or real-video encoder output.
+Numerical checks cover selected positions/shapes, dim=8 and dim=2, and input gradients; they are not exhaustive backend/mixed-precision/full-PR tests.
+
+PER-SEED OLD/NEW METRICS (trajectory-weighted across 3 folds)
+seed=11
+  one_step_mse: old=0.004622031702; new=0.004572013083; delta=-5.001861913e-05; relative_change=-1.08218%
+  long_context_one_step_mse: old=0.01831542235; new=0.01862214195; delta=0.0003067196036; relative_change=1.67465%
+  persistence_mse: old=0.005395256914; new=0.005395256914; delta=0; relative_change=0%
+  temporally_mismatched_actions_mse: old=0.006867983223; new=0.006740315662; delta=-0.0001276675612; relative_change=-1.85888%
+  autoregressive_same_length_mean_mse: old=0.0468606942; new=0.04947845541; delta=0.002617761216; relative_change=5.58626%
+  autoregressive_mean_mse: old=0.1892928408; new=0.210563295; delta=0.02127045413; relative_change=11.2368%
+  action temporal-mismatch MSE minus correct-action MSE: old=0.002245951522; new=0.002168302579. Positive values are observed action sensitivity, not a causal real-world performance claim.
+seed=22
+  one_step_mse: old=0.004319396413; new=0.003750202634; delta=-0.0005691937792; relative_change=-13.1776%
+  long_context_one_step_mse: old=0.01671338826; new=0.01611757837; delta=-0.0005958098918; relative_change=-3.56487%
+  persistence_mse: old=0.005395256914; new=0.005395256914; delta=0; relative_change=0%
+  temporally_mismatched_actions_mse: old=0.006470262539; new=0.005788803721; delta=-0.0006814588172; relative_change=-10.5322%
+  autoregressive_same_length_mean_mse: old=0.04711624489; new=0.04271873443; delta=-0.004397510457; relative_change=-9.33332%
+  autoregressive_mean_mse: old=0.1959093886; new=0.1961902918; delta=0.0002809032617; relative_change=0.143384%
+  action temporal-mismatch MSE minus correct-action MSE: old=0.002150866125; new=0.002038601087. Positive values are observed action sensitivity, not a causal real-world performance claim.
+seed=33
+  one_step_mse: old=0.004253214225; new=0.004076722; delta=-0.0001764922248; relative_change=-4.14962%
+  long_context_one_step_mse: old=0.01735031636; new=0.01708983754; delta=-0.0002604788169; relative_change=-1.50129%
+  persistence_mse: old=0.005395256914; new=0.005395256914; delta=0; relative_change=0%
+  temporally_mismatched_actions_mse: old=0.006412309129; new=0.00611179648; delta=-0.0003005126491; relative_change=-4.6865%
+  autoregressive_same_length_mean_mse: old=0.04264792231; new=0.04240259891; delta=-0.0002453234047; relative_change=-0.575229%
+  autoregressive_mean_mse: old=0.1852386441; new=0.1943934888; delta=0.009154844657; relative_change=4.94219%
+  action temporal-mismatch MSE minus correct-action MSE: old=0.002159094904; new=0.002035074479. Positive values are observed action sensitivity, not a causal real-world performance claim.
+
+Each seed summary is descriptive. Three initialization seeds are not three independent datasets. No significance claim.
+AR same-length uses 7 predictions from a 2-frame true prefix; AR mean uses 15 predictions, including context-length extrapolation beyond the 8 training frames.
+The corrected rotation passes the selected mathematical checks and both versions complete CUDA training. Learning metrics must be interpreted as this synthetic tiny predictor only; no full VLA, pretrained-weight, or robot-performance improvement is established.
+Artifacts: runs-index.json enumerates all 18 result/curve/checkpoint paths and hashes. Checkpoints will be archived separately from results.zip.
+
+OBSERVED SYNTHETIC-TASK CONCLUSION (three-seed descriptive means)
+one_step_mse: old seed mean=0.004398214113; new seed mean=0.004132979239; change=-6.03051%; lower new error in 3/3 seeds.
+long_context_one_step_mse: old seed mean=0.01745970899; new seed mean=0.01727651929; change=-1.04921%; lower new error in 2/3 seeds.
+persistence_mse: old seed mean=0.005395256914; new seed mean=0.005395256914; change=0%; lower new error in 0/3 seeds.
+temporally_mismatched_actions_mse: old seed mean=0.006583518297; new seed mean=0.006213638621; change=-5.61827%; lower new error in 3/3 seeds.
+autoregressive_same_length_mean_mse: old seed mean=0.04554162047; new seed mean=0.04486659625; change=-1.48221%; lower new error in 2/3 seeds.
+autoregressive_mean_mse: old seed mean=0.1901469578; new seed mean=0.2003823585; change=5.38289%; lower new error in 0/3 seeds.
+Corrected RoPE lowers the observed 8-frame one-step feature MSE, but raises the 15-prediction recursive feature MSE. This is a mixed learning result and does not establish general predictor-quality improvement. The longer rollout includes context-length extrapolation.

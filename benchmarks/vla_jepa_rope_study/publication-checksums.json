@@ -1,0 +1,114 @@
+{
+  "algorithm": "SHA256",
+  "self_hash_note": "This manifest excludes itself to avoid a circular hash.",
+  "files": {
+    "LEROBOT-LICENSE": {
+      "sha256": "9e108af26a7ae92a6d2cb0273856a4a0a84da8819c2cffee8b2657cc4f905718",
+      "size_bytes": 29977
+    },
+    "README.md": {
+      "sha256": "1885cef17f0cc182fcf0030f398a6ea065563c6599cfa84b194f9ff295ed06a5",
+      "size_bytes": 5457
+    },
+    "REPORT.md": {
+      "sha256": "2c55e177467565ff3e1d9cfcb0dec50d909db5b3b2cdef17811cb3e2f31d5ad8",
+      "size_bytes": 13285
+    },
+    "archive-manifest.json": {
+      "sha256": "29367978504787e130af15897d039efbd109e1a751d6432dd33fb2f5c3e6d8a1",
+      "size_bytes": 1741
+    },
+    "artifact-verification.json": {
+      "sha256": "25b8a9243843887836af452c887915143e4d753e769932daeafa7b914d1d7432",
+      "size_bytes": 259
+    },
+    "checkpoints.zip": {
+      "sha256": "9d5da81abe4a125586ec164d522ca9fa1a9bcad4e93a7a205c71ff672ca308a6",
+      "size_bytes": 12549608
+    },
+    "checksums.json": {
+      "sha256": "faed2b32e3294d6abea25138857943a61210b2e8bb4bf1983a53d88ee73b37de",
+      "size_bytes": 21652
+    },
+    "cuda-math-checks.json": {
+      "sha256": "79d973de4affcefaaebf70f8a0565de7ded836c16664a93a423fc29c6d12b90a",
+      "size_bytes": 2141
+    },
+    "cuda_preflight.py": {
+      "sha256": "627527f6b4b8e598213e8a3c6722120986d1db6db4bb558dfb74e592e407b725",
+      "size_bytes": 2041
+    },
+    "diagnose_rollout.py": {
+      "sha256": "86460c29f0d8a5fdf5ea05c900755f19e78a3f0db0ea82be57b28a5a89f221e6",
+      "size_bytes": 26670
+    },
+    "diagnostics-summary.json": {
+      "sha256": "69638a9ce571bfd0ca87fddd708e959b7c95e6ebc5b3e555a2c4c0afab6a7a0f",
+      "size_bytes": 321069
+    },
+    "diagnostics.zip": {
+      "sha256": "2032e28bf9e792858b7f60b3eb9b25ad0097e0b526adcea8d3e5d67fc1fd4d8f",
+      "size_bytes": 9968428
+    },
+    "experiment.py": {
+      "sha256": "ccd2e9828f60996d5d26fbcf7fdc10d2b3b5c0760de94b3c0afc8bab00fffbdf",
+      "size_bytes": 31418
+    },
+    "independent-review.json": {
+      "sha256": "4ea8e6eb5f4cebdd89bc44a59c8d1fe6ab4cda8ff5f54c158c85277009527f28",
+      "size_bytes": 1718
+    },
+    "plot_diagnostics.py": {
+      "sha256": "1481abd16c41944bbe27198a339b1a741b24d31f5424cd58a9e2db638d63a265",
+      "size_bytes": 4607
+    },
+    "results.zip": {
+      "sha256": "d2d48cb81e4df373dca6809822285c07b0aeffc59ac13fe543ae632c9e889d80",
+      "size_bytes": 561425
+    },
+    "rollout-diagnosis.pdf": {
+      "sha256": "dfa8f3d5b14d571658e3956d0f3e2ff339cd1862fdccd5fb26ca809186ddd5ea",
+      "size_bytes": 22844
+    },
+    "rollout-diagnosis.png": {
+      "sha256": "0a0aa737bb29fcce9b90baf88867085ea160f96e3601fbf025cb4a8ee3ff8a8f",
+      "size_bytes": 178535
+    },
+    "rope-only.patch": {
+      "sha256": "aeff983e415ea2c0d303677d6259a2e9373d1c69caa556cc7b01b6e0d6463d74",
+      "size_bytes": 528
+    },
+    "run-windows.ps1": {
+      "sha256": "5da17961fd45dc2930c19111b12744371444913b179a1afadb7403b40053e171",
+      "size_bytes": 4771
+    },
+    "runs-index.json": {
+      "sha256": "eaf334cfdfd1b4d1c152326c60538c9b4eccacc9b70bced8307676bd5ab8b3eb",
+      "size_bytes": 12299
+    },
+    "source-manifest.json": {
+      "sha256": "75c30c690c0efb2a02cfc241a1bd047699853b73064ea303e0f21ecee58dd1ec",
+      "size_bytes": 631
+    },
+    "training-report.txt": {
+      "sha256": "255599985ce0cbd60a619b11627828c7a4f6dafd6746253e4805902abb9e81c3",
+      "size_bytes": 10524
+    },
+    "training-summary.json": {
+      "sha256": "81a8796913b44e06ad3f7a5fb1251de1e9d5a09c7963b85d69df97b8d414f15e",
+      "size_bytes": 27912
+    },
+    "trajectory-splits.json": {
+      "sha256": "4702d5c0eea691fb512527d500afc67328cf294e4ac26443abe678a37cbb72ae",
+      "size_bytes": 4290
+    },
+    "verify_artifacts.py": {
+      "sha256": "15aa11add2ab5193854abb2264db3d1724f607b4113ef257fbe0031c01555170",
+      "size_bytes": 5584
+    },
+    "world_model_original.py": {
+      "sha256": "050b6bc0901c59fff8efaa5c3d18a6fe35d8ffe968c91c50624b57763d6f847c",
+      "size_bytes": 16808
+    }
+  }
+}
